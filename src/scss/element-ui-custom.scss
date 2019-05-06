@@ -1,0 +1,33 @@
+@import './color-variables.scss';
+@import './size-variables.scss';
+
+.el-menu {
+  border: 0 none;
+  background-color: $menu-bg-color;
+  .el-submenu__title:hover {
+    background-color: #022c54 !important;
+  }
+  .el-menu-item:hover {
+    background-color: #022c54 !important;
+  }
+}
+.el-menu--collapse {
+  .el-submenu__title {
+    span {
+      height: 0;
+      width: 0;
+      overflow: hidden;
+      visibility: hidden;
+      display: inline-block;
+    }
+  }
+  i.el-submenu__icon-arrow {
+    display: none;
+  }
+}
+
+.el-scrollbar {
+  .scrollbar-wrapper {
+    overflow-x: hidden;
+  }
+}
