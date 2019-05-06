@@ -33,7 +33,7 @@ function hasPermission (roles, route) {
 
 //   return res
 // }
-export function filterAsyncRoutes (routes, roles) {  
+export function filterAsyncRoutes (routes, roles) {
   const res = []
 
   routes.forEach(route => {

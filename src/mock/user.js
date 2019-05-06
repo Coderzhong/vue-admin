@@ -2,7 +2,7 @@ import Mock from 'mockjs'
 
 import { tokens, userInfos } from '@/util/mock-user-info'
 
-Mock.mock(/\api\/login/, 'post', options => {
+Mock.mock(/api\/login/, 'post', options => {
   const { username } = JSON.parse(options.body)
   const token = tokens[username]
   if (token) {
@@ -19,10 +19,10 @@ Mock.mock(/\api\/login/, 'post', options => {
       message: '用户名不正确',
       data: {}
     }
-  } 
+  }
 })
 
-Mock.mock(/\api\/getUserInfo/, 'get', options => {
+Mock.mock(/api\/getUserInfo/, 'get', options => {
   const token = options.url.match(/id=(\S*)/)[1]
   const userInfo = userInfos[token]
   console.log(userInfo)
@@ -41,7 +41,7 @@ Mock.mock(/\api\/getUserInfo/, 'get', options => {
         userInfo
       }
     }
-  }  
+  }
 })
 
 // Mock.mock(/\api\/logout/, 'post', options => {
@@ -61,5 +61,5 @@ Mock.mock(/\api\/getUserInfo/, 'get', options => {
 //       message: '用户名不正确',
 //       data: {}
 //     }
-//   } 
+//   }
 // })

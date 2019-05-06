@@ -5,7 +5,7 @@
     <el-dropdown class="right-menu fr">
       <span class="el-dropdown-link">
         <img src="https://avatars0.githubusercontent.com/u/24318123?s=50&v=4" alt="avatar" class="avatar">
-        <span class="name">{{ name }}</span>        
+        <span class="name">{{ name }}</span>
         <i class="el-icon-arrow-down el-icon--right"></i>
       </span>
       <el-dropdown-menu slot="dropdown">
@@ -19,7 +19,6 @@
 
 <script>
 import { mapState, mapActions } from 'vuex'
-import { removeToken } from '@/util/token'
 import SidebarTrigger from './SidebarTrigger'
 import Breadcrumb from './Breadcrumb'
 export default {
