@@ -1,4 +1,6 @@
 import { asyncRoutes, constantRoutes } from '@/router'
+import { cloneDeep } from 'lodash'
+
 /**
  * Filter asynchronous routing tables by recursion
  * @param routes asyncRoutes
@@ -18,8 +20,8 @@ export function filterAsyncRoutes (routes, rules) {
 }
 
 const state = {
-  addRoutes: [],
-  routes: []
+  routes: [],
+  addRoutes: []
 }
 
 const mutations = {
@@ -34,9 +36,9 @@ const actions = {
     return new Promise(resolve => {
       let accessedRoutes
       if (Object.entries(rules).every(item => item[1])) {
-        accessedRoutes = asyncRoutes || []
+        accessedRoutes = cloneDeep(asyncRoutes) || []
       } else {
-        accessedRoutes = filterAsyncRoutes(asyncRoutes, rules)
+        accessedRoutes = filterAsyncRoutes(cloneDeep(asyncRoutes), rules)
       }
       commit('SET_ROUTES', accessedRoutes)
       resolve(accessedRoutes)
