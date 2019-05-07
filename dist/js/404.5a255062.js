@@ -1,2 +1,1 @@
 (window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["404"],{2754:function(n,e,t){"use strict";t.r(e);var c=function(){var n=this,e=n.$createElement,t=n._self._c||e;return t("div",[n._v("\n  404\n")])},u=[],a={name:"",data:function(){return{}},methods:{},mounted:function(){}},o=a,r=t("17cc"),i=Object(r["a"])(o,c,u,!1,null,"29eaff80",null);e["default"]=i.exports}}]);
-//# sourceMappingURL=404.5a255062.js.map
