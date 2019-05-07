@@ -25,7 +25,6 @@ Mock.mock(/api\/login/, 'post', options => {
 Mock.mock(/api\/getUserInfo/, 'get', options => {
   const token = options.url.match(/id=(\S*)/)[1]
   const userInfo = userInfos[token]
-  console.log(userInfo)
   if (!userInfo) {
     return {
       code: 110,

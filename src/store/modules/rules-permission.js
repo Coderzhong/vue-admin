@@ -1,5 +1,4 @@
 import { asyncRoutes, constantRoutes } from '@/router'
-
 /**
  * Filter asynchronous routing tables by recursion
  * @param routes asyncRoutes
@@ -19,8 +18,8 @@ export function filterAsyncRoutes (routes, rules) {
 }
 
 const state = {
-  routes: [],
-  addRoutes: []
+  addRoutes: [],
+  routes: []
 }
 
 const mutations = {

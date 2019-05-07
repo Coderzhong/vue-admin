@@ -1,4 +1,4 @@
-import router from '@/router'
+import router, { asyncRoutes } from '@/router'
 import store from '@/store'
 import { getToken } from '@/util/token'
 
@@ -20,6 +20,7 @@ router.beforeEach(async (to, from, next) => {
     }
   } else {
     if (to.path === '/login') {
+      console.log(asyncRoutes)
       next()
     } else {
       next({ path: '/login' })

@@ -56,7 +56,7 @@ export const constantRoutes = [
         path: '/dashboard',
         name: 'Dashboard',
         component: Dashboard,
-        meta: { title: '首页', icon: 'menu' }
+        meta: { title: '首页', icon: 'home' }
       }
     ]
   },
@@ -66,7 +66,7 @@ export const constantRoutes = [
     component: Layout,
     meta: {
       title: '文档',
-      icon: 'document'
+      icon: 'file-text'
     },
     children: [
       {
@@ -89,7 +89,7 @@ export const constantRoutes = [
     component: Layout,
     meta: {
       title: '多级菜单',
-      icon: 'goods'
+      icon: 'bars'
     },
     children: [
       {
@@ -138,7 +138,7 @@ export const asyncRoutes = [
         path: 'index',
         name: 'PermissionIndex',
         component: Permission,
-        meta: { title: '权限', icon: 'success', roles: ['admin'] }
+        meta: { title: '权限', icon: 'key', roles: ['admin'] }
       }
     ]
   },
@@ -148,7 +148,7 @@ export const asyncRoutes = [
     component: Layout,
     meta: {
       title: '表单',
-      icon: 'picture'
+      icon: 'file'
     },
     children: [
       {
@@ -173,6 +173,13 @@ export const asyncRoutes = [
   }
 ]
 
-export default new Router({
+const createRouter = () => new Router({
+  scrollBehavior: () => ({ y: 0 }),
   routes: constantRoutes
 })
+const router = createRouter()
+export function resetRouter () {
+  const newRouter = createRouter()
+  router.matcher = newRouter.matcher
+}
+export default router

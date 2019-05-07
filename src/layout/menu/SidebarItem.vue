@@ -1,18 +1,18 @@
 <template>
   <div>
-    <template v-if="hasOneShowingChild(item.children,item) && (!onlyOneChild.children||onlyOneChild.noShowingChildren)">
+    <template v-if="hasOneShowingChild(item.children,item) && (!onlyOneChild.children || onlyOneChild.noShowingChildren)">
         <el-menu-item
           v-if="onlyOneChild.meta" :to="resolvePath(onlyOneChild.path)"
           :index="resolvePath(onlyOneChild.path)"
         >
-          <i :class="`el-icon-${onlyOneChild.meta.icon||(item.meta&&item.meta.icon)}`"></i>
+          <i :class="`fa fa-${onlyOneChild.meta.icon || (item.meta&&item.meta.icon)}`"></i>
           <span slot="title">{{onlyOneChild.meta.title}}</span>
         </el-menu-item>
     </template>
 
     <el-submenu v-else :index="resolvePath(item.path)">
       <template slot="title" v-if="item.meta">
-        <i :class="`el-icon-${item.meta && item.meta.icon}`"></i>
+        <i :class="`fa fa-${item.meta && item.meta.icon}`"></i>
         <span slot="title">{{item.meta.title}}</span>
       </template>
       <sidebar-item
@@ -30,7 +30,6 @@ import path from 'path'
 export default {
   name: 'SidebarItem',
   props: {
-    // route object
     item: {
       type: Object,
       required: true
@@ -73,3 +72,12 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+  i.fa {
+    margin-right: 8px;
+    &.fa-home {
+      font-size: 18px;
+    }
+  }
+</style>
+

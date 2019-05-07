@@ -1,5 +1,6 @@
 import { login, getUserInfo } from '@/api/user'
 import { getToken, setToken, removeToken } from '@/util/token'
+import { resetRouter } from '@/router'
 
 const state = {
   token: getToken(),
@@ -66,19 +67,18 @@ const actions = {
   logout ({ commit, state }) {
     // return new Promise((resolve, reject) => {
     //   logout(state.token).then(() => {
-    //     commit('SET_TOKEN', '')
-    //     commit('SET_ROLES', [])
-    //     commit('SET_RULES', {})
-    //     removeToken()
+    //     处理逻辑
     //     resolve()
     //   }).catch(error => {
     //     reject(error)
     //   })
     // })
     commit('SET_TOKEN', '')
+    commit('SET_NAME', '')
     commit('SET_ROLES', [])
     commit('SET_RULES', {})
     removeToken()
+    resetRouter()
   }
 }
 
