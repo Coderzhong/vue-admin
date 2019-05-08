@@ -85,13 +85,17 @@ export default {
   align-items: center;
   width: 100%;
   height: 100%;
-  background: #ccd0d4;
+  background: url("../assets/login-bg.jpg") 100%;
   .login-main {
-    width: 400px;
-    height: 600px;
+    border-radius: 6px;
+    box-shadow: 0 0 3px #eee;
+    width: 480px;
+    padding: 40px 60px;
+    background-color: #fff;
     .title {
       margin-bottom: 40px;
       text-align: center;
+      // color: #fff;
     }
     .login-btn {
       width: 100%;
@@ -99,6 +103,7 @@ export default {
     .tip {
       margin-top: 20px;
       font-size: 14px;
+      // color: #fff;
       p {
         line-height: 24px;
       }

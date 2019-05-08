@@ -4,8 +4,8 @@
     <breadcrumb class="fl"/>
     <el-dropdown class="right-menu fr">
       <span class="el-dropdown-link">
-        <img src="https://avatars0.githubusercontent.com/u/24318123?s=50&v=4" alt="avatar" class="avatar">
-        <span class="name">{{ name }}</span>
+        <i class="fa fa-user avatar"></i>
+        <span class="name">{{ greeting }} {{ name }}</span>
         <i class="el-icon-arrow-down el-icon--right"></i>
       </span>
       <el-dropdown-menu slot="dropdown">
@@ -21,6 +21,8 @@
 import { mapState, mapActions } from 'vuex'
 import SidebarTrigger from './SidebarTrigger'
 import Breadcrumb from './Breadcrumb'
+import { greet } from '@/util'
+
 export default {
   name: '',
   components: {
@@ -28,10 +30,11 @@ export default {
     Breadcrumb
   },
   data () {
-    return {}
+    return {
+      greeting: greet()
+    }
   },
   mounted () {
-
   },
   methods: {
     ...mapActions('user', ['logout']),
@@ -59,10 +62,9 @@ export default {
     height: 100%;
     cursor: pointer;
     .avatar {
-      width: 30px;
-      height: 30px;
-      border-radius: 5px;
       padding-right: 10px;
+      color: $primary;
+      font-size: 22px;
     }
     .name {
       font-size: 16px;

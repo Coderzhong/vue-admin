@@ -3,12 +3,15 @@
 
 .el-menu {
   border: 0 none;
-  background-color: $menu-bg-color;
-  .el-submenu__title:hover {
-    background-color: #022c54 !important;
+  background-color: $menu-bg;
+  .el-submenu__title:hover, .el-menu-item:hover {
+    transition: all .15s;
+    border-radius: 22px;
+    background-color: $menu-bg-hover !important;
   }
-  .el-menu-item:hover {
-    background-color: #022c54 !important;
+  .el-menu-item.is-active {
+    color: $primary;
+    font-size: 16px;
   }
 }
 .el-menu--collapse {

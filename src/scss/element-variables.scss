@@ -1,6 +1,7 @@
 @import './color-variables.scss';
 /* 改变主题色变量 */
-$--color-primary: $primary-color;
+$--color-primary: $primary !default;
+$--color-success: $primary !default;
 
 /* 改变 icon 字体路径变量，必需 */
 $--font-path: '~element-ui/lib/theme-chalk/fonts';

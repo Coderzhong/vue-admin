@@ -1,5 +1,7 @@
 # 基于vue的admin前端框架
 
+预览地址：https://coderzhong.github.io/vue-admin/dist/
+
 ## Project setup
 ```
 npm install

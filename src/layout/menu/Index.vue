@@ -5,8 +5,8 @@
         router
         :collapse="isCollapse"
         :default-active="$route.path"
-        background-color="#001529"
-        text-color="#bfcbd9"
+        :background-color="colorVariables.menuBg"
+        :text-color="colorVariables.menuText"
         unique-opened
         :collapse-transition="false"
       >
@@ -19,6 +19,8 @@
 <script>
 import { mapState } from 'vuex'
 import SidebarItem from './SidebarItem'
+import colorVariables from '@/scss/color-variables.scss'
+
 export default {
   name: 'Menu',
   components: {
@@ -26,6 +28,7 @@ export default {
   },
   data () {
     return {
+      colorVariables
     }
   },
   computed: {

@@ -33,7 +33,7 @@ export default {
 <style lang="scss" scoped>
 @import '@/scss/color-variables.scss';
 .logo-wrapper {
-  background-color: $menu-bg-color;
+  background-color: $menu-bg;
   .logo-link {
     display: flex;
     height: 100%;

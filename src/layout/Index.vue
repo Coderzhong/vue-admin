@@ -71,7 +71,7 @@ $transition-time: .28s;
     }
     .menu-wrapper {
       height: calc(100% - #{$header-height});
-      background: $menu-bg-color;
+      background: $menu-bg;
     }
   }
   .main-container {
