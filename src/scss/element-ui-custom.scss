@@ -4,14 +4,20 @@
 .el-menu {
   border: 0 none;
   background-color: $menu-bg;
+  .el-submenu.is-active {
+    .el-submenu__title {
+      color: #fff !important;
+      i {
+        color: #fff;
+      }
+    }
+  }
   .el-submenu__title:hover, .el-menu-item:hover {
-    transition: all .15s;
-    border-radius: 22px;
-    background-color: $menu-bg-hover !important;
+    color: #fff !important;
   }
   .el-menu-item.is-active {
-    color: $primary;
-    font-size: 16px;
+    color: #fff;
+    background-color: $primary !important;
   }
 }
 .el-menu--collapse {

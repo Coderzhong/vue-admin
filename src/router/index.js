@@ -32,7 +32,6 @@ Vue.use(Router)
   * redirect: 'noredirect'  当设置 noredirect 的时候该路由在面包屑导航中不可被点击，如404
   * name: 'router-name' 设定路由的名字
   * meta: {
-      roles: ['super-admin', 'admin'] 设置该路由进入的权限，支持多个权限叠加
       title: 'title'  设置该路由在侧边栏和面包屑中展示的名字
       icon: ''  设置该路由的图标
       breadcrumb: false 如果设置为false，则不会在breadcrumb面包屑中显示
@@ -138,7 +137,7 @@ export const asyncRoutes = [
         path: 'index',
         name: 'PermissionIndex',
         component: Permission,
-        meta: { title: '权限', icon: 'key', roles: ['admin'] }
+        meta: { title: '权限', icon: 'key' }
       }
     ]
   },
@@ -161,7 +160,7 @@ export const asyncRoutes = [
         path: 'form2',
         name: 'Form2',
         component: Form2,
-        meta: { title: '权限表单2', roles: ['admin'] }
+        meta: { title: '权限表单2' }
       }
     ]
   },

@@ -36,6 +36,7 @@ export default {
     height: $header-height;
     line-height: $header-height;
     text-align: center;
+    font-size: 18px;
   }
   &:hover {
     background: rgba(0, 0, 0, .025);
