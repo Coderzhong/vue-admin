@@ -1,6 +1,6 @@
 import Mock from 'mockjs'
 
-import { tokens, userInfos } from '@/util/mock-user-info'
+import { tokens, userInfoList } from '@/util/mock-user-info'
 
 Mock.mock(/api\/login/, 'post', options => {
   const { username } = JSON.parse(options.body)
@@ -24,7 +24,7 @@ Mock.mock(/api\/login/, 'post', options => {
 
 Mock.mock(/api\/getUserInfo/, 'get', options => {
   const token = options.url.match(/id=(\S*)/)[1]
-  const userInfo = userInfos[token]
+  const userInfo = userInfoList[token]
   if (!userInfo) {
     return {
       code: 110,

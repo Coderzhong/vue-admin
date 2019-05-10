@@ -1,6 +1,7 @@
 <template>
   <div>
     dashboard
+    <!-- <div v-action:loss>损失：10w</div> -->
   </div>
 </template>
 

@@ -7,6 +7,7 @@ import 'font-awesome/css/font-awesome.min.css'
 import router from '@/router'
 import store from './store'
 import './util/permission'
+import './directive/action'
 import '@/mock'
 
 Vue.config.productionTip = false

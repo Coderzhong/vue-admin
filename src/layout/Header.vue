@@ -4,7 +4,7 @@
     <breadcrumb class="fl"/>
     <el-dropdown class="right-menu fr">
       <span class="el-dropdown-link">
-        <i class="fa fa-user avatar"></i>
+        <img :src="avatar" alt="avatar" class="avatar" />
         <span class="name">{{ greeting }} {{ name }}</span>
         <i class="el-icon-arrow-down el-icon--right"></i>
       </span>
@@ -44,7 +44,7 @@ export default {
     }
   },
   computed: {
-    ...mapState('user', ['name', 'roles'])
+    ...mapState('user', ['name', 'avatar'])
   }
 }
 </script>
@@ -62,9 +62,11 @@ export default {
     height: 100%;
     cursor: pointer;
     .avatar {
-      padding-right: 10px;
-      color: $primary;
-      font-size: 22px;
+      border-radius: 50%;
+      margin-right: 10px;
+      width: 40px;
+      height: 40px;
+      vertical-align: bottom;
     }
     .name {
       font-size: 16px;

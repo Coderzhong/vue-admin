@@ -5,8 +5,9 @@ import { resetRouter } from '@/router'
 const state = {
   token: getToken(),
   name: '',
-  roles: [],
-  rules: {}
+  avatar: '',
+  role: {},
+  info: {}
 }
 
 const mutations = {
@@ -16,11 +17,14 @@ const mutations = {
   SET_NAME: (state, name) => {
     state.name = name
   },
-  SET_ROLES: (state, roles) => {
-    state.roles = roles
+  SET_AVATAR: (state, avatar) => {
+    state.avatar = avatar
   },
-  SET_RULES: (state, rules) => {
-    state.rules = rules
+  SET_ROLE: (state, role) => {
+    state.role = role
+  },
+  SET_INFO: (state, info) => {
+    state.info = info
   }
 }
 
@@ -46,18 +50,18 @@ const actions = {
         if (code !== 0) {
           reject(new Error(message))
         }
-        const { token, userInfo: { name, roles, rules } } = data
-        if (!roles || roles.length <= 0) {
-          reject(new Error('roles字段必须是个非空的数组'))
+        const { token, userInfo } = data
+        const { name, avatar, role } = userInfo
+        if (!role || role.permissions.length <= 0) {
+          reject(new Error('role的permissions字段必须是个非空的数组'))
         }
-        if (!rules) {
-          reject(new Error('rules不能为空'))
-        }
+        role.permissionList = role.permissions.map(permission => { return permission.permissionId })
         // 重新设置Cookie以重新设置cookie的过期时间
         setToken(token)
         commit('SET_NAME', name)
-        commit('SET_ROLES', roles)
-        commit('SET_RULES', rules)
+        commit('SET_AVATAR', avatar)
+        commit('SET_ROLE', role)
+        commit('SET_INFO', userInfo)
         resolve(data)
       }).catch(error => {
         reject(error)
@@ -75,8 +79,8 @@ const actions = {
     // })
     commit('SET_TOKEN', '')
     commit('SET_NAME', '')
-    commit('SET_ROLES', [])
-    commit('SET_RULES', {})
+    commit('SET_ROLE', {})
+    commit('SET_INFO', {})
     removeToken()
     resetRouter()
   }

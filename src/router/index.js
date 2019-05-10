@@ -41,27 +41,36 @@ Vue.use(Router)
 export const constantRoutes = [
   {
     path: '/login',
-    name: 'Login',
+    name: 'login',
     component: Login,
     hidden: true
   },
   {
+    path: '/404',
+    name: 'err404',
+    component: Err404,
+    hidden: true
+  }
+]
+
+export const asyncRoutes = [  
+  {
     path: '/',
-    name: 'Layout',
+    name: 'layout',
     component: Layout,
     redirect: '/dashboard',
     children: [
       {
         path: '/dashboard',
-        name: 'Dashboard',
+        name: 'dashboard',
         component: Dashboard,
-        meta: { title: '首页', icon: 'home' }
+        meta: { title: '首页', icon: 'home', permission: ['dashboard'] }
       }
     ]
   },
   {
     path: '/document',
-    name: 'Document',
+    name: 'document',
     component: Layout,
     meta: {
       title: '文档',
@@ -70,13 +79,13 @@ export const constantRoutes = [
     children: [
       {
         path: 'index',
-        name: 'DocumentIndex',
+        name: 'documentIndex',
         component: Document,
         meta: { title: '索引' }
       },
       {
         path: 'conventions',
-        name: 'Conventions',
+        name: 'donventions',
         component: Conventions,
         meta: { title: '规范' }
       }
@@ -84,7 +93,7 @@ export const constantRoutes = [
   },
   {
     path: '/menu',
-    name: 'Menu',
+    name: 'menu',
     component: Layout,
     meta: {
       title: '多级菜单',
@@ -93,19 +102,19 @@ export const constantRoutes = [
     children: [
       {
         path: 'menu1',
-        name: 'Menu1',
+        name: 'menu1',
         component: Menu1,
         meta: { title: '菜单1' },
         children: [
           {
             path: 'menu1-1',
-            name: 'Menu1-1',
+            name: 'menu1-1',
             component: Menu11,
             meta: { title: '菜单1-1' }
           },
           {
             path: 'menu1-2',
-            name: 'Menu1-2',
+            name: 'menu1-2',
             component: Menu12,
             meta: { title: '菜单1-2' }
           }
@@ -113,37 +122,28 @@ export const constantRoutes = [
       },
       {
         path: 'menu2',
-        name: 'Menu2',
+        name: 'menu2',
         component: Menu2,
         meta: { title: '菜单2' }
       }
     ]
   },
   {
-    path: '/404',
-    name: 'Err404',
-    component: Err404,
-    hidden: true
-  }
-]
-
-export const asyncRoutes = [
-  {
     path: '/permission',
-    name: 'Permission',
+    name: 'permission',
     component: Layout,
     children: [
       {
         path: 'index',
-        name: 'PermissionIndex',
+        name: 'permissionIndex',
         component: Permission,
-        meta: { title: '权限', icon: 'key' }
+        meta: { title: '权限', icon: 'key', permission: ['permission'] }
       }
     ]
   },
   {
     path: '/form',
-    name: 'Form',
+    name: 'form',
     component: Layout,
     meta: {
       title: '表单',
@@ -152,21 +152,21 @@ export const asyncRoutes = [
     children: [
       {
         path: 'form1',
-        name: 'Form1',
+        name: 'form1',
         component: Form1,
-        meta: { title: '表单' }
+        meta: { title: '表单', permission: ['form'] }
       },
       {
         path: 'form2',
-        name: 'Form2',
+        name: 'form2',
         component: Form2,
-        meta: { title: '权限表单2' }
+        meta: { title: '权限表单2', permission: ['permissionForm'] }
       }
     ]
   },
   {
     path: '*',
-    name: 'All',
+    name: 'all',
     component: Err404,
     hidden: true
   }
