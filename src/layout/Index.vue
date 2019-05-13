@@ -28,6 +28,7 @@ import Logo from './Logo'
 import SideMenu from './menu/Index'
 import LayoutHeader from './Header'
 import LayoutFooter from './Footer'
+import resize from '@/mixin/resize'
 export default {
   name: '',
   components: {
@@ -39,6 +40,7 @@ export default {
   data () {
     return {}
   },
+  mixins: [resize],
   methods: {
 
   },
@@ -89,12 +91,20 @@ $transition-time: .28s;
     }
     .app-main {
       margin-top: $header-height;
+      height: calc(100vh - #{$header-height} - #{$footer-height});
       min-height: calc(100vh - #{$header-height} - #{$footer-height});
       padding: 20px;
+      background: $app-bg;
+      .app-container {
+        border-radius: 2px;
+        height: 100%;
+        box-shadow: 0 0 3px #ccc;
+        background: #fff;
+      }
     }
     footer {
       height: $footer-height;
-      background: #f0f2f5;
+      background: $app-bg;
     }
   }
   &.collapse {

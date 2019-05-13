@@ -5,7 +5,7 @@
     <el-dropdown class="right-menu fr">
       <span class="el-dropdown-link">
         <img :src="avatar" alt="avatar" class="avatar" />
-        <span class="name">{{ greeting }} {{ name }}</span>
+        <span class="name">{{ greeting }}，{{ name }}</span>
         <i class="el-icon-arrow-down el-icon--right"></i>
       </span>
       <el-dropdown-menu slot="dropdown">
@@ -67,10 +67,6 @@ export default {
       width: 40px;
       height: 40px;
       vertical-align: bottom;
-    }
-    .name {
-      font-size: 16px;
-      font-weight: bold;
     }
   }
 }

@@ -23,6 +23,7 @@
       <li>components</li>
       <li>props</li>
       <li>data</li>
+      <li>mixin</li>
       <li>created</li>
       <li>mounted</li>
       <li>activited</li>

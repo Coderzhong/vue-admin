@@ -6,7 +6,7 @@ import './scss/element-ui-custom.scss'
 import 'font-awesome/css/font-awesome.min.css'
 import router from '@/router'
 import store from './store'
-import './util/permission'
+import './permission'
 import './directive/action'
 import '@/mock'
 

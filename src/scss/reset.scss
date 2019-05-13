@@ -8,6 +8,11 @@ body, div, span, header, footer, nav, section, aside, article, ul, dl, dt, dd, l
       outline: none;
   }
 }
+ul, ol {
+  li {
+    list-style: none;
+  }
+}
 .clearfix:after {
 	content: ".";
 	display: block;

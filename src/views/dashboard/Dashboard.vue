@@ -1,7 +1,7 @@
 <template>
   <div>
-    dashboard
-    <!-- <div v-action:loss>损失：10w</div> -->
+    首页
+    <div v-action:loss>损失：10w</div>
   </div>
 </template>
 
@@ -9,7 +9,8 @@
 export default {
   name: '',
   data () {
-    return {}
+    return {
+    }
   },
   methods: {},
   mounted () {
@@ -18,5 +19,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 </style>

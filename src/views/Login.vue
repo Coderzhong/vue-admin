@@ -2,9 +2,9 @@
   <div class="login-wrapper">
     <div class="login-main">
       <h1 class="title">Vue Admin</h1>
-      <el-form :model="loginForm" :rules="rules" ref="loginForm">
+      <el-form :model="loginForm" :rules="rules" ref="loginForm" @keyup.enter.native="handleLogin">
         <el-form-item prop="username">
-          <el-input type="text" placeholder="用户名" autofocus clearable
+          <el-input type="text" placeholder="admin OR visitor" autofocus clearable
             v-model.trim ="loginForm.username"
             prefix-icon="fa fa-user"
           ></el-input>
@@ -17,10 +17,6 @@
         </el-form-item>
         <el-button type="primary" class="login-btn" :loading="loading" @click="handleLogin">登 录</el-button>
       </el-form>
-      <div class="tip">
-        <p>用户名：admin OR visitor</p>
-        <p>密码：任意6位</p>
-      </div>
     </div>
   </div>
 </template>
@@ -46,7 +42,7 @@ export default {
     }
     return {
       loginForm: {
-        username: 'admin',
+        username: '',
         password: '123456'
       },
       rules: {
@@ -95,18 +91,9 @@ export default {
     .title {
       margin-bottom: 40px;
       text-align: center;
-      // color: #fff;
     }
     .login-btn {
       width: 100%;
-    }
-    .tip {
-      margin-top: 20px;
-      font-size: 14px;
-      // color: #fff;
-      p {
-        line-height: 24px;
-      }
     }
   }
 }
