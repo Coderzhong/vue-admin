@@ -86,7 +86,7 @@ export default {
     border-radius: 6px;
     box-shadow: 0 0 3px #eee;
     width: 480px;
-    padding: 40px 60px;
+    padding: 40px 60px 80px 60px;
     background-color: #fff;
     .title {
       margin-bottom: 40px;

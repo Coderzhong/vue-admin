@@ -1,7 +1,7 @@
 <template>
   <div>
     首页
-    <div v-action:loss>损失：10w</div>
+    <div v-action:profit>仅admin可见：100wRMB</div>
   </div>
 </template>
 

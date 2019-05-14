@@ -14,7 +14,7 @@ export const userInfoList = {
         {
           permissionId: 'dashboard',
           permissionName: '首页',
-          actionList: ['loss']
+          actionList: ['profit']
         },
         {
           permissionId: 'permission',
