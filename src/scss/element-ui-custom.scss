@@ -13,7 +13,12 @@
     }
   }
   .el-submenu__title:hover, .el-menu-item:hover {
+    transition: color .3s;
     color: #fff !important;
+    i {
+      transition: color .3s;
+      color: #fff !important;
+    }
   }
   .el-menu-item.is-active {
     color: #fff;

@@ -98,6 +98,7 @@ $transition-time: .28s;
       .app-container {
         border-radius: 2px;
         height: 100%;
+        padding: 14px;
         box-shadow: 0 0 3px #eee;
         background: #fff;
       }

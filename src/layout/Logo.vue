@@ -1,6 +1,6 @@
 <template>
   <div class="logo-wrapper">
-    <a href="#" class="logo-link">
+    <a href="/dashbord#/dashboard" class="logo-link">
       <img src="@/assets/logo.png" alt="logo">
       <h1 v-show="!isCollapse">Vue Admin</h1>
     </a>

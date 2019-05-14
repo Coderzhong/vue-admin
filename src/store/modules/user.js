@@ -43,6 +43,7 @@ const actions = {
       })
     })
   },
+
   getUserInfo ({ commit, state }) {
     return new Promise((resolve, reject) => {
       getUserInfo({ id: state.token }).then(res => {
@@ -68,6 +69,7 @@ const actions = {
       })
     })
   },
+
   logout ({ commit, state }) {
     // return new Promise((resolve, reject) => {
     //   logout(state.token).then(() => {
@@ -83,6 +85,15 @@ const actions = {
     commit('SET_INFO', {})
     removeToken()
     resetRouter()
+  },
+
+  resetToken ({ commit }) {
+    return new Promise(resolve => {
+      commit('SET_TOKEN', '')
+      commit('SET_ROLE', {})
+      removeToken()
+      resolve()
+    })
   }
 }
 

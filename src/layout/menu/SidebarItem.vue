@@ -74,10 +74,12 @@ export default {
 </script>
 <style lang="scss" scoped>
   i.fa {
-    margin-right: 8px;
     &.fa-home {
       font-size: 18px;
     }
+  }
+  i.fa + span {    
+    margin-left: 8px;
   }
 </style>
 
