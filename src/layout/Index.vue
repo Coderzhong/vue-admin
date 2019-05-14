@@ -28,7 +28,7 @@ import Logo from './Logo'
 import SideMenu from './menu/Index'
 import LayoutHeader from './Header'
 import LayoutFooter from './Footer'
-import resize from '@/mixin/resize'
+import resize from './mixin/resize'
 export default {
   name: '',
   components: {
@@ -98,7 +98,7 @@ $transition-time: .28s;
       .app-container {
         border-radius: 2px;
         height: 100%;
-        box-shadow: 0 0 3px #ccc;
+        box-shadow: 0 0 3px #eee;
         background: #fff;
       }
     }

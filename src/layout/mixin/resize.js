@@ -11,7 +11,6 @@ export default {
     window.removeEventListener('resize', this.$_resizeHandler)
   },
   mounted () {
-    console.log('mounted')
     const isMobile = this.$_isMobile()
     if (isMobile) {
       store.commit('app/CLOSE_SIDEBAR')
