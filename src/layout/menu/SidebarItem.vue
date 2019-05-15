@@ -78,8 +78,7 @@ export default {
       font-size: 18px;
     }
   }
-  i.fa + span {    
+  i.fa + span {
     margin-left: 8px;
   }
 </style>
-
