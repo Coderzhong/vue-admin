@@ -2,10 +2,12 @@
   <div>
     <h1>命名规范</h1>
     <ul>
-      <li>camelCase（驼峰/小驼峰）: isStandard；
-        PascalCase（帕斯卡）：IsStandard；
-        kebab-case：is-isStandard；
-        下划线：is_standard</li>
+      <li>
+        <p>camelCase（驼峰/小驼峰）: isStandard；</p>
+        <p>PascalCase（帕斯卡）：IsStandard；</p>
+        <p>kebab-case：is-isStandard；</p>
+        <p>下划线：is_standard</p>
+      </li>
       <li>views下文件夹小写，如：document</li>
       <li>vue文件：PascalCase，如：Login.vue</li>
       <li>js、scss文件等：kebab-case，如：roles-permission.js</li>
@@ -23,7 +25,7 @@
       <li>components</li>
       <li>props</li>
       <li>data</li>
-      <li>mixin</li>
+      <li>mixins</li>
       <li>created</li>
       <li>mounted</li>
       <li>activited</li>
@@ -35,8 +37,9 @@
       <li>watch</li>
     </ul>
     <h1>接口数据格式</h1>
-    <div>
-      json类型：
+    <ul>
+      <li>
+        json类型：
       {
         code: 0,
         message: 'OK',
@@ -46,7 +49,9 @@
           age: 20
         }
       }
-      array类型：
+      </li>
+      <li>
+        array类型：
       {
         code: 0,
         message: 'OK',
@@ -65,7 +70,9 @@
           ]
         }
       }
-      分页类型：
+      </li>
+      <li>
+        分页类型：
       code: 0, // 0表示成功，非0待定义
       message: 'OK'，
       data: {
@@ -86,7 +93,8 @@
           }
         ]
       }
-    </div>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -106,5 +114,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+h1 {
+  margin-bottom: 20px;
+}
+li {
+  margin-bottom: 20px;
+  p {
+    line-height: 26px;
+  }
+}
 </style>

@@ -1,25 +1,48 @@
 <template>
   <div>
-    <div id="chart" class="chart"></div>
+    <div :class="className" :style="{ height, width }"></div>
   </div>
 </template>
 
 <script>
+import resize from '@/mixin/resize'
+
 const echarts = require('echarts/lib/echarts')
 require('echarts/theme/macarons')
 require('echarts/lib/chart/line')
+
 export default {
   name: '',
-  data () {
-    return {}
+  props: {
+    className: {
+      type: String,
+      default: 'chart'
+    },
+    width: {
+      type: String,
+      default: '100%'
+    },
+    height: {
+      type: String,
+      default: '300px'
+    }
   },
+  data () {
+    return {
+      chart: null
+    }
+  },
+  mixins: [resize],
   mounted () {
-    this.initChart()
+    this.$nextTick(() => {
+      this.initChart()
+    })
   },
   methods: {
     initChart () {
-      const chart = echarts.init(document.getElementById('chart'), 'macarons')
-      chart.setOption({
+      this.chart = echarts.init(this.$el, 'macarons')
+
+      this.chart.setOption({
         tooltip: {
           trigger: 'axis'
         },
@@ -63,17 +86,10 @@ export default {
           }
         ]
       })
-      window.onresize = function () {
-        chart.resize()
-      }
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.chart {
-  width: 100%;
-  height: 100%;
-}
 </style>

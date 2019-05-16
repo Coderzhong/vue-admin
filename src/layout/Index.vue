@@ -12,11 +12,11 @@
         <div class="app-main">
           <transition name="fade-transform" mode="out-in">
             <router-view class="app-container"/>
-          </transition>
+          </transition>          
+          <footer>
+            <layout-footer />
+          </footer>
         </div>
-        <footer>
-          <layout-footer />
-        </footer>
       </el-scrollbar>
     </div>
   </div>
@@ -78,6 +78,7 @@ $transition-time: .28s;
   }
   .main-container {
     margin-left: $sidebar-width;
+    height: 100%;
     transition: margin-left $transition-time;
     background-color: #fff;
     header {
@@ -91,21 +92,20 @@ $transition-time: .28s;
     }
     .app-main {
       margin-top: $header-height;
-      height: calc(100vh - #{$header-height} - #{$footer-height});
-      min-height: calc(100vh - #{$header-height} - #{$footer-height});
-      padding: 20px;
+      padding: $app-main-padding;
+      padding-bottom: 0;
       background: $app-bg;
       .app-container {
         border-radius: 2px;
-        height: 100%;
+        min-height: calc(100vh - #{$header-height} - #{$footer-height} - #{$app-main-padding});
         padding: 14px;
         box-shadow: 0 0 3px #eee;
         background: #fff;
+      }      
+      footer {
+        height: $footer-height;
+        background: $app-bg;
       }
-    }
-    footer {
-      height: $footer-height;
-      background: $app-bg;
     }
   }
   &.collapse {
@@ -121,6 +121,6 @@ $transition-time: .28s;
   }
 }
 .el-scrollbar {
-  height: 100vh;
+  height: 100%;
 }
 </style>
