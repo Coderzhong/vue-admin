@@ -51,9 +51,9 @@ import {
   Row,
   Col,
   // Upload,
-  // Progress,
+  Progress,
   // Badge,
-  // Card,
+  Card,
   // Rate,
   // Steps,
   // Step,
@@ -121,9 +121,9 @@ Vue.use(Icon)
 Vue.use(Row)
 Vue.use(Col)
 // Vue.use(Upload)
-// Vue.use(Progress)
+Vue.use(Progress)
 // Vue.use(Badge)
-// Vue.use(Card)
+Vue.use(Card)
 // Vue.use(Rate)
 // Vue.use(Steps)
 // Vue.use(Step)

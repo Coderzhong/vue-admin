@@ -19,12 +19,17 @@ export const userInfoList = {
         {
           permissionId: 'permission',
           permissionName: '权限',
-          actionList: ['add']
+          actionList: []
+        },
+        {
+          permissionId: 'multiMenu',
+          permissionName: '多级菜单',
+          actionList: []
         },
         {
           permissionId: 'form',
           permissionName: '表单',
-          actionList: ['add']
+          actionList: []
         },
         {
           permissionId: 'permissionForm',
@@ -44,11 +49,6 @@ export const userInfoList = {
         {
           permissionId: 'dashboard',
           permissionName: '首页',
-          actionList: []
-        },
-        {
-          permissionId: 'form',
-          permissionName: '表单',
           actionList: []
         }
       ]

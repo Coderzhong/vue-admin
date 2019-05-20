@@ -8,7 +8,7 @@ const Login = () => import(/* webpackChunkName: "login" */ '@/views/Login')
 
 const Layout = () => import(/* webpackChunkName: "layout" */ '@/layout/Index')
 
-const Dashboard = () => import(/* webpackChunkName: "dashboard" */ '@/views/dashboard/Dashboard')
+const Dashboard = () => import(/* webpackChunkName: "dashboard" */ '@/views/dashboard/Index')
 
 const Document = () => import(/* webpackChunkName: "document" */ '@/views/document/Index')
 const Conventions = () => import(/* webpackChunkName: "document" */ '@/views/document/Conventions')
@@ -53,7 +53,7 @@ export const constantRoutes = [
   }
 ]
 
-export const asyncRoutes = [  
+export const asyncRoutes = [
   {
     path: '/',
     name: 'layout',
@@ -97,7 +97,8 @@ export const asyncRoutes = [
     component: Layout,
     meta: {
       title: '多级菜单',
-      icon: 'bars'
+      icon: 'bars',
+      permission: ['multiMenu']
     },
     children: [
       {
@@ -147,20 +148,21 @@ export const asyncRoutes = [
     component: Layout,
     meta: {
       title: '表单',
-      icon: 'file'
+      icon: 'file',
+      permission: ['form']
     },
     children: [
       {
         path: 'form1',
         name: 'form1',
         component: Form1,
-        meta: { title: '表单', permission: ['form'] }
+        meta: { title: '表单' }
       },
       {
         path: 'form2',
         name: 'form2',
         component: Form2,
-        meta: { title: '权限表单2', permission: ['permissionForm'] }
+        meta: { title: '权限表单2' }
       }
     ]
   },

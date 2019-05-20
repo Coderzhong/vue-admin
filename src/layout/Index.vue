@@ -12,7 +12,7 @@
         <div class="app-main">
           <transition name="fade-transform" mode="out-in">
             <router-view class="app-container"/>
-          </transition>          
+          </transition>
           <footer>
             <layout-footer />
           </footer>
@@ -86,6 +86,7 @@ $transition-time: .28s;
       top: 0;
       left: $sidebar-width;
       right: 0;
+      z-index: 2;
       height: $header-height;
       transition: left $transition-time;
       background: #fff;
@@ -101,7 +102,7 @@ $transition-time: .28s;
         padding: 14px;
         box-shadow: 0 0 3px #eee;
         background: #fff;
-      }      
+      }
       footer {
         height: $footer-height;
         background: $app-bg;

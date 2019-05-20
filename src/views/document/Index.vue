@@ -1,6 +1,9 @@
 <template>
   <div>
-    <router-link to="/document/conventions">规范</router-link>
+    <ul>
+      <li>使用说明 -- 待整理</li>
+      <li><router-link to="/document/conventions">规范</router-link></li>
+    </ul>
   </div>
 </template>
 
@@ -20,5 +23,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+li {
+  padding: 4px;
+}
 </style>

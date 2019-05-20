@@ -1,5 +1,5 @@
 import { asyncRoutes, constantRoutes } from '@/router'
-import { cloneDeep } from 'lodash'
+import cloneDeep from 'lodash/cloneDeep'
 
 /**
  * 过滤账户是否拥有某一个权限，并将菜单从加载列表移除
