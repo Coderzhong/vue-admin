@@ -17,8 +17,8 @@ export const userInfoList = {
           actionList: ['profit']
         },
         {
-          permissionId: 'permission',
-          permissionName: '权限',
+          permissionId: 'list',
+          permissionName: '列表',
           actionList: []
         },
         {

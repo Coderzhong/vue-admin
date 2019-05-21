@@ -24,10 +24,10 @@
 
 <script>
 import { mapState } from 'vuex'
-import Logo from './Logo'
-import SideMenu from './menu/Index'
-import LayoutHeader from './Header'
-import LayoutFooter from './Footer'
+import Logo from './components/Logo'
+import SideMenu from './components/menu/Index'
+import LayoutHeader from './components/Header'
+import LayoutFooter from './components/Footer'
 import resize from './mixin/resize'
 export default {
   name: '',

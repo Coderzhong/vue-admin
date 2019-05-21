@@ -45,3 +45,20 @@
     overflow-x: hidden;
   }
 }
+
+.el-table {
+  .cell {
+    text-align: center;
+  }
+  th {
+    .cell {
+      color: #333;
+    }
+  }
+}
+
+
+// 自定义样式
+.action-more {
+  color: $primary;
+}

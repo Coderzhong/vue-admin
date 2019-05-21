@@ -21,7 +21,7 @@ const Menu2 = () => import(/* webpackChunkName: "muitiMenu" */ '@/views/multi-me
 const Form1 = () => import(/* webpackChunkName: "form" */ '@/views/form/Form')
 const Form2 = () => import(/* webpackChunkName: "form" */ '@/views/form/Form2')
 
-const Permission = () => import(/* webpackChunkName: "permission" */ '@/views/permission/Permission')
+const List = () => import(/* webpackChunkName: "list" */ '@/views/list/List')
 
 const Err404 = () => import(/* webpackChunkName: "404" */ '@/views/error/404')
 
@@ -92,12 +92,49 @@ export const asyncRoutes = [
     ]
   },
   {
+    path: '/list',
+    name: 'list',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'listIndex',
+        component: List,
+        meta: { title: '列表', icon: 'list', permission: ['list'] }
+      }
+    ]
+  },
+  {
+    path: '/form',
+    name: 'form',
+    component: Layout,
+    meta: {
+      title: '表单',
+      icon: 'file',
+      permission: ['form']
+    },
+    children: [
+      {
+        path: 'form1',
+        name: 'form1',
+        component: Form1,
+        meta: { title: '表单' }
+      },
+      {
+        path: 'form2',
+        name: 'form2',
+        component: Form2,
+        meta: { title: '分步表单' }
+      }
+    ]
+  },
+  {
     path: '/menu',
     name: 'menu',
     component: Layout,
     meta: {
       title: '多级菜单',
-      icon: 'bars',
+      icon: 'th',
       permission: ['multiMenu']
     },
     children: [
@@ -126,43 +163,6 @@ export const asyncRoutes = [
         name: 'menu2',
         component: Menu2,
         meta: { title: '菜单2' }
-      }
-    ]
-  },
-  {
-    path: '/permission',
-    name: 'permission',
-    component: Layout,
-    children: [
-      {
-        path: 'index',
-        name: 'permissionIndex',
-        component: Permission,
-        meta: { title: '权限', icon: 'key', permission: ['permission'] }
-      }
-    ]
-  },
-  {
-    path: '/form',
-    name: 'form',
-    component: Layout,
-    meta: {
-      title: '表单',
-      icon: 'file',
-      permission: ['form']
-    },
-    children: [
-      {
-        path: 'form1',
-        name: 'form1',
-        component: Form1,
-        meta: { title: '表单' }
-      },
-      {
-        path: 'form2',
-        name: 'form2',
-        component: Form2,
-        meta: { title: '权限表单2' }
       }
     ]
   },
