@@ -63,3 +63,11 @@ export function debounce (func, wait, immediate) {
     return result
   }
 }
+
+// 获取指定URL参数
+export function getUrlParams (url, name) {
+  const reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i')
+  const r = url.match(/\?(\S*)/)[1].match(reg)
+  if (r != null) return (r[2])
+  return null
+}

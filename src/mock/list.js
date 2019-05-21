@@ -1,20 +1,40 @@
 import Mock from 'mockjs'
+import { getUrlParams } from '@/util'
 
-Mock.mock(/api\/list/, 'post', options => {
-  const { username } = JSON.parse(options.body)
-  if (username) {
+const mockList = []
+const total = Mock.mock('@integer(60, 178)')
+
+for (let i = 0; i < total; i++) {
+  mockList.push(
+    Mock.mock({
+      'number|1000000-9999999': 1234567,
+      'name': Mock.mock('@cword(`零一二三四五六七八九十`, 3)'),
+      'origin|1': [
+        '北京',
+        '上海',
+        '广州'
+      ],
+      'date': Mock.mock('@date')
+    })
+  )
+}
+
+Mock.mock(/api\/getList/, 'get', options => {
+  const currentPage = getUrlParams(options.url, 'currentPage')
+  const pageSize = getUrlParams(options.url, 'pageSize')
+  if (currentPage) {
+    const pages = Math.ceil(total / pageSize)
+    const list = mockList.filter((item, index) =>
+      index < pageSize * currentPage && index >= pageSize * (currentPage - 1))
     return {
       code: 0,
       message: 'OK',
       data: {
         currentPage: 1,
-        total: 15, // 总条数
-        pageSize: 10, // 一页显示的条数
-        pages: 2, // 总页数
-        list: [
-          { id: 110, name: '我是110', age: 20 },
-          { id: 119, name: '我是119', age: 21 }
-        ]
+        total, // 总条数
+        pageSize, // 一页显示的条数
+        pages, // 总页数
+        list
       }
     }
   } else {

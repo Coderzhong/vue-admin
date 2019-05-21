@@ -18,9 +18,6 @@ export default {
       isFullscreen: false
     }
   },
-  created () {
-    console.log('screenfull.isFullscreen:', screenfull.isFullscreen)
-  },
   mounted () {
     this.init()
   },

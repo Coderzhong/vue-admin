@@ -1,5 +1,5 @@
 import Mock from 'mockjs'
-
+import { getUrlParams } from '@/util'
 import { tokens, userInfoList } from '@/util/mock-user-info'
 
 Mock.mock(/api\/login/, 'post', options => {
@@ -23,7 +23,7 @@ Mock.mock(/api\/login/, 'post', options => {
 })
 
 Mock.mock(/api\/getUserInfo/, 'get', options => {
-  const token = options.url.match(/id=(\S*)/)[1]
+  const token = getUrlParams(options.url, 'id')
   const userInfo = userInfoList[token]
   if (!userInfo) {
     return {

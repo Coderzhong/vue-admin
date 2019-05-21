@@ -16,6 +16,7 @@
           <el-date-picker
             v-model="query.date"
             type="date"
+            value-format="yyyy-MM-dd"
             placeholder="出厂日期">
           </el-date-picker>
         </el-form-item>
@@ -26,32 +27,22 @@
         </el-form-item>
       </el-form>
     </div>
-    <el-table border :data="list" v-loading="loading">
-      <el-table-column prop="date" label="日期" sortable></el-table-column>
-      <el-table-column prop="name" label="姓名"></el-table-column>
-      <el-table-column prop="address" label="地址" :formatter="formatter"></el-table-column>
-      <el-table-column prop="tag" label="标签"
-        :filters="[{ text: '家', value: '家' }, { text: '公司', value: '公司' }]"
-        :filter-method="filterTag"
-        filter-placement="bottom-end">
-        <template slot-scope="scope">
-          <el-tag
-            :type="scope.row.tag === '家' ? 'primary' : 'success'"
-            close-transition>{{scope.row.tag}}</el-tag>
-        </template>
-      </el-table-column>
+    <el-table border size="small" :data="list" v-loading="loading">
+      <el-table-column prop="name" label="产品名称"></el-table-column>
+      <el-table-column prop="origin" label="产地"></el-table-column>
+      <el-table-column prop="date" label="出厂日期" sortable></el-table-column>
       <el-table-column label="操作">
         <template slot-scope="{row}">
+          <el-button type="text">详情</el-button>
           <el-button type="text">编辑</el-button>
-          <el-button type="text">删除</el-button>
           <el-button type="text">
             <el-dropdown trigger="click">
               <span class="el-dropdown-link action-more">
                 更多<i class="el-icon-arrow-down el-icon--right"></i>
               </span>
               <el-dropdown-menu slot="dropdown">
+                <el-dropdown-item>删除</el-dropdown-item>
                 <el-dropdown-item>禁用</el-dropdown-item>
-                <el-dropdown-item>详情</el-dropdown-item>
               </el-dropdown-menu>
             </el-dropdown>
           </el-button>
@@ -67,6 +58,7 @@
 </template>
 
 <script>
+import { getList } from '@/api/list'
 import Pagination from '@/components/Pagination'
 export default {
   components: {
@@ -76,6 +68,7 @@ export default {
     return {
       loading: true,
       total: 0,
+      list: [],
       query: {
         number: '',
         date: null,
@@ -87,28 +80,7 @@ export default {
         { label: '北京', value: 'beijing' },
         { label: '上海', value: 'shanghai' },
         { label: '广州', value: 'guangzhou' }
-      ],
-      list: [{
-        date: '2016-05-02',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1518 弄',
-        tag: '家'
-      }, {
-        date: '2016-05-04',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1517 弄',
-        tag: '公司'
-      }, {
-        date: '2016-05-01',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1519 弄',
-        tag: '家'
-      }, {
-        date: '2016-05-03',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1516 弄',
-        tag: '公司'
-      }]
+      ]
     }
   },
   mounted () {
@@ -116,23 +88,23 @@ export default {
   },
   methods: {
     getList () {
-      this.loading = false
+      this.loading = true
+      getList(this.query).then(res => {
+        this.loading = false
+        const { code, data: { total, list } } = res
+        if (code === 0) {
+          this.total = total
+          this.list = list
+        }
+      })
     },
     handleQuery () {
       this.query.currentPage = 1
       this.getList()
     },
     handleAdd () {
-
     },
     handleDownload () {
-
-    },
-    formatter (row, column) {
-      return row.address
-    },
-    filterTag (value, row) {
-      return row.tag === value
     }
   }
 }
