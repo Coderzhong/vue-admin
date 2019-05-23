@@ -1,9 +1,9 @@
 <template>
   <div class="logo-wrapper">
-    <a href="/dashbord#/dashboard" class="logo-link">
+    <router-link :to="{ path:'/dashboard' }" class="logo-link">
       <img src="@/assets/logo.png" alt="logo">
       <h1 v-show="!isCollapse">Vue Admin</h1>
-    </a>
+    </router-link>
   </div>
 </template>
 

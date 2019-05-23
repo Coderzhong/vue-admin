@@ -19,7 +19,7 @@ for (let i = 0; i < total; i++) {
   )
 }
 
-Mock.mock(/api\/getList/, 'get', options => {
+const list = Mock.mock(/api\/getList/, 'get', options => {
   const currentPage = getUrlParams(options.url, 'currentPage')
   const pageSize = getUrlParams(options.url, 'pageSize')
   if (currentPage) {
@@ -45,3 +45,7 @@ Mock.mock(/api\/getList/, 'get', options => {
     }
   }
 })
+
+export default {
+  list
+}

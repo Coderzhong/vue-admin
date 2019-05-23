@@ -89,9 +89,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '@/scss/size-variables.scss';
 .dashbord {
-  padding: 0 !important;
-  background: transparent !important;
+  margin: -$app-container-padding;
+  background: #f0f2f5;
 }
 .el-row {
   .el-col {

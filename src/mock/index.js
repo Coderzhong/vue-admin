@@ -1,7 +1,7 @@
-import user from './user'
+import * as user from './user'
 import list from './list'
 
-export default {
+export {
   user,
   list
 }

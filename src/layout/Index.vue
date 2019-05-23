@@ -11,7 +11,9 @@
         </header>
         <div class="app-main">
           <transition name="fade-transform" mode="out-in">
-            <router-view class="app-container"/>
+            <div class="app-container">
+              <router-view />
+            </div>
           </transition>
           <footer>
             <layout-footer />
@@ -99,7 +101,7 @@ $transition-time: .28s;
       .app-container {
         border-radius: 2px;
         min-height: calc(100vh - #{$header-height} - #{$footer-height} - #{$app-main-padding});
-        padding: 14px;
+        padding: $app-container-padding;
         box-shadow: 0 0 3px #eee;
         background: #fff;
       }

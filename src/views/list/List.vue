@@ -29,6 +29,7 @@
     </div>
     <el-table border size="small" :data="list" v-loading="loading">
       <el-table-column prop="name" label="产品名称"></el-table-column>
+      <el-table-column prop="number" label="产品编号"></el-table-column>
       <el-table-column prop="origin" label="产地"></el-table-column>
       <el-table-column prop="date" label="出厂日期" sortable></el-table-column>
       <el-table-column label="操作">

@@ -19,7 +19,7 @@ const Menu12 = () => import(/* webpackChunkName: "muitiMenu" */ '@/views/multi-m
 const Menu2 = () => import(/* webpackChunkName: "muitiMenu" */ '@/views/multi-menu/Menu2')
 
 const Form1 = () => import(/* webpackChunkName: "form" */ '@/views/form/Form')
-const Form2 = () => import(/* webpackChunkName: "form" */ '@/views/form/Form2')
+const stepForm = () => import(/* webpackChunkName: "form" */ '@/views/form/stepForm/Index')
 
 const List = () => import(/* webpackChunkName: "list" */ '@/views/list/List')
 
@@ -64,7 +64,7 @@ export const asyncRoutes = [
         path: '/dashboard',
         name: 'dashboard',
         component: Dashboard,
-        meta: { title: '首页', icon: 'home', permission: ['dashboard'] }
+        meta: { title: '首页', icon: 'dashboard', permission: ['dashboard'] }
       }
     ]
   },
@@ -110,7 +110,7 @@ export const asyncRoutes = [
     component: Layout,
     meta: {
       title: '表单',
-      icon: 'file',
+      icon: 'edit',
       permission: ['form']
     },
     children: [
@@ -121,9 +121,9 @@ export const asyncRoutes = [
         meta: { title: '表单' }
       },
       {
-        path: 'form2',
-        name: 'form2',
-        component: Form2,
+        path: 'step-form',
+        name: 'stepForm',
+        component: stepForm,
         meta: { title: '分步表单' }
       }
     ]

@@ -2,7 +2,7 @@ import Mock from 'mockjs'
 import { getUrlParams } from '@/util'
 import { tokens, userInfoList } from '@/util/mock-user-info'
 
-Mock.mock(/api\/login/, 'post', options => {
+const login = Mock.mock(/api\/login/, 'post', options => {
   const { username } = JSON.parse(options.body)
   const token = tokens[username]
   if (token) {
@@ -22,7 +22,7 @@ Mock.mock(/api\/login/, 'post', options => {
   }
 })
 
-Mock.mock(/api\/getUserInfo/, 'get', options => {
+const getUserInfo = Mock.mock(/api\/getUserInfo/, 'get', options => {
   const token = getUrlParams(options.url, 'id')
   const userInfo = userInfoList[token]
   if (!userInfo) {
@@ -43,7 +43,7 @@ Mock.mock(/api\/getUserInfo/, 'get', options => {
   }
 })
 
-// Mock.mock(/\api\/logout/, 'post', options => {
+// const logout = Mock.mock(/\api\/logout/, 'post', options => {
 //   const { username } = JSON.parse(options.body)
 //   const token = tokens[username]
 //   if (token) {
@@ -62,3 +62,8 @@ Mock.mock(/api\/getUserInfo/, 'get', options => {
 //     }
 //   }
 // })
+
+export {
+  login,
+  getUserInfo
+}

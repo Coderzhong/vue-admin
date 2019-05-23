@@ -19,11 +19,11 @@ import {
   Input,
   InputNumber,
   Radio,
-  // RadioGroup,
+  RadioGroup,
   // RadioButton,
   Checkbox,
   CheckboxButton,
-  // CheckboxGroup,
+  CheckboxGroup,
   // Switch,
   Select,
   Option,
@@ -34,7 +34,7 @@ import {
   TableColumn,
   DatePicker,
   // TimeSelect,
-  // TimePicker,
+  TimePicker,
   // Popover,
   Tooltip,
   Breadcrumb,
@@ -55,8 +55,8 @@ import {
   Badge,
   Card,
   // Rate,
-  // Steps,
-  // Step,
+  Steps,
+  Step,
   // Carousel,
   // CarouselItem,
   // Collapse,
@@ -89,11 +89,11 @@ Vue.use(MenuItemGroup)
 Vue.use(Input)
 Vue.use(InputNumber)
 Vue.use(Radio)
-// Vue.use(RadioGroup)
+Vue.use(RadioGroup)
 // Vue.use(RadioButton)
 Vue.use(Checkbox)
-Vue.use(CheckboxButton)
-// Vue.use(CheckboxGroup)
+// Vue.use(CheckboxButton)
+Vue.use(CheckboxGroup)
 // Vue.use(Switch)
 Vue.use(Select)
 Vue.use(Option)
@@ -104,7 +104,7 @@ Vue.use(Table)
 Vue.use(TableColumn)
 Vue.use(DatePicker)
 // Vue.use(TimeSelect)
-// Vue.use(TimePicker)
+Vue.use(TimePicker)
 // Vue.use(Popover)
 Vue.use(Tooltip)
 Vue.use(Breadcrumb)
@@ -125,8 +125,8 @@ Vue.use(Progress)
 Vue.use(Badge)
 Vue.use(Card)
 // Vue.use(Rate)
-// Vue.use(Steps)
-// Vue.use(Step)
+Vue.use(Steps)
+Vue.use(Step)
 // Vue.use(Carousel)
 // Vue.use(CarouselItem)
 // Vue.use(Collapse)
