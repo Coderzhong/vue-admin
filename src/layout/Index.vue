@@ -10,11 +10,11 @@
           <layout-header />
         </header>
         <div class="app-main">
-          <transition name="fade-transform" mode="out-in">
-            <div class="app-container">
+          <div class="app-container">
+            <transition name="fade-transform" mode="out-in">              
               <router-view />
-            </div>
-          </transition>
+            </transition>          
+          </div>
           <footer>
             <layout-footer />
           </footer>
