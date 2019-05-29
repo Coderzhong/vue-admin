@@ -1,5 +1,11 @@
 <template>
   <div>
+    <h1>代码规范</h1>
+    <ul>
+      <li>
+        <a target="_blank" href="https://github.com/standard/standard/blob/master/docs/RULES-zhcn.md">eslint的Standard Style</a>
+      </li>      
+    </ul>
     <h1>命名规范</h1>
     <ul>
       <li>
