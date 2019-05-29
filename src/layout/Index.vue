@@ -11,9 +11,9 @@
         </header>
         <div class="app-main">
           <div class="app-container">
-            <transition name="fade-transform" mode="out-in">              
+            <transition name="fade-transform" mode="out-in">
               <router-view />
-            </transition>          
+            </transition>
           </div>
           <footer>
             <layout-footer />
