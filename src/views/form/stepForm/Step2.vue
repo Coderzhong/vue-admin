@@ -14,7 +14,8 @@
         <el-input v-model="ruleForm.field8"></el-input>
       </el-form-item>
       <el-form-item class="button-wrapper">
-        <el-button type="primary" :loading="loading" @click="nextStep">下一步</el-button>
+        <el-button type="primary" :loading="loading" @click="nextStep">提交</el-button>
+        <el-button @click="prevStep">上一步</el-button>
       </el-form-item>
     </el-form>
   </div>
