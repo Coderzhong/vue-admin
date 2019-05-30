@@ -1,5 +1,6 @@
 <template>
   <div class="login-wrapper">
+    <login-bg />
     <div class="login-main">
       <h1 class="title">Vue Admin</h1>
       <el-form :model="loginForm" :rules="rules" ref="loginForm" @keyup.enter.native="handleLogin">
@@ -23,7 +24,11 @@
 
 <script>
 import { mapActions } from 'vuex'
+import LoginBg from './components/LoginBg'
 export default {
+  components: {
+    LoginBg
+  },
   data () {
     const validateUsername = (rule, value, callback) => {
       const validUsername = username => ['admin', 'visitor'].includes(username)
@@ -81,20 +86,22 @@ export default {
   align-items: center;
   width: 100%;
   height: 100%;
-  background: url("../assets/login-bg.jpg") 100%;
   .login-main {
     border-radius: 6px;
-    box-shadow: 0 0 3px #eee;
+    box-shadow: 0 0 5px #eee;
     width: 480px;
     padding: 40px 60px 80px 60px;
     background-color: #fff;
     .title {
-      margin-bottom: 40px;
+      margin-bottom: 46px;
       text-align: center;
     }
     .login-btn {
       width: 100%;
     }
   }
+}
+.el-form-item {
+  margin-bottom: 30px;
 }
 </style>

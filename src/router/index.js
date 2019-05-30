@@ -4,7 +4,7 @@ import Router from 'vue-router'
 // route level code-splitting
 // this generates a separate chunk (about.[hash].js) for this route
 // which is lazy-loaded when the route is visited.
-const Login = () => import(/* webpackChunkName: "login" */ '@/views/Login')
+const Login = () => import(/* webpackChunkName: "login" */ '@/views/login/Index')
 
 const Layout = () => import(/* webpackChunkName: "layout" */ '@/layout/Index')
 

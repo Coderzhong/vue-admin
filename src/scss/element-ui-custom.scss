@@ -58,6 +58,13 @@
 }
 
 
+// 页内覆盖默认样式
+.login-wrapper {
+  .el-form-item__error {
+    padding-top: 8px !important;
+  }
+}
+
 // 自定义样式
 .action-more {
   color: $primary;

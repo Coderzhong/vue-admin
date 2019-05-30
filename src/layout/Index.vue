@@ -62,7 +62,7 @@ export default {
 @import '@/scss/transition.scss';
 $transition-time: .28s;
 .app-wrapper {
-  position: relative;
+  // position: relative;
   height: 100%;
   .sidebar-container {
     position: fixed;
