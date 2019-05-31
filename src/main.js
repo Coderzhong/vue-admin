@@ -10,6 +10,8 @@ import './permission'
 import './directive/action'
 import '@/mock'
 
+console.log(process.env)
+
 Vue.config.productionTip = false
 
 new Vue({

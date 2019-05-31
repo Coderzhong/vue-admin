@@ -54,7 +54,16 @@ cnpm install
 npm run serve
 ```
 
-### 打包
+### 打包发布
+#### 生产环境
 ```
-npm run build
+npm run build:prod
+```
+#### 测试环境
+```
+npm run build:test
+```
+#### 演示环境
+```
+npm run build:stage
 ```

@@ -1,10 +1,12 @@
 {
   "name": "vue-admin",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build:prod": "vue-cli-service build --mode production",
+    "build:test": "vue-cli-service build --mode test",
+    "build:stage": "vue-cli-service build --mode staging",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {

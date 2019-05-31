@@ -7,6 +7,7 @@ import { MessageBox } from 'element-ui'
 
 const request = axios.create({
   // baseURL: process.env.BASE_API, // api 的 base_url
+  baseURL: process.env.VUE_APP_BASE_URL, // url = base url + request url 根据自己的情况配置
   timeout: 5000 // request timeout
 })
 request.interceptors.request.use(config => {
