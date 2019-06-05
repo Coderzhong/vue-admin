@@ -23,6 +23,8 @@ const stepForm = () => import(/* webpackChunkName: "form" */ '@/views/form/stepF
 
 const List = () => import(/* webpackChunkName: "list" */ '@/views/list/List')
 
+const Location = () => import(/* webpackChunkName: "map" */ '@/views/map/Location')
+
 const Err404 = () => import(/* webpackChunkName: "404" */ '@/views/error/404')
 
 Vue.use(Router)
@@ -65,6 +67,19 @@ export const asyncRoutes = [
         name: 'dashboard',
         component: Dashboard,
         meta: { title: '首页', icon: 'dashboard', permission: ['dashboard'] }
+      }
+    ]
+  },
+  {
+    path: '/map',
+    name: 'map',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'mapIndex',
+        component: Location,
+        meta: { title: '定位', icon: 'location-arrow' }
       }
     ]
   },
