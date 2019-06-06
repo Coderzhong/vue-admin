@@ -5,7 +5,7 @@
 ## 介绍
 - 基于3个vue的admin开发项目和多个开源的admin项目，抽象整理出此vue-admin
 - 基础框架，clone本项目后可以基于此直接进行前端业务开发和扩展
-- vue-cli3 + vue-router + axios + vuex + element-ui + echarts + mockjs + lodash
+- vue-cli3 + vue-router + axios + vuex + element-ui + lodash + echarts + baiduMap + mockjs
 
 ## 功能
 - 登录、登出、JWT、管理token过期时间、记录登录状态
@@ -33,6 +33,7 @@
     - dashboard
     - 列表查询
     - 表单 & 分步表单
+    - 百度地图实时定位 & 多点定位
     - 404
 
 ## 使用

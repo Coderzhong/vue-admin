@@ -23,7 +23,8 @@ const stepForm = () => import(/* webpackChunkName: "form" */ '@/views/form/stepF
 
 const List = () => import(/* webpackChunkName: "list" */ '@/views/list/List')
 
-const Location = () => import(/* webpackChunkName: "map" */ '@/views/map/Location')
+const RealTimeLocation = () => import(/* webpackChunkName: "map" */ '@/views/map/RealTimeLocation')
+const MultiLocation = () => import(/* webpackChunkName: "map" */ '@/views/map/MultiLocation')
 
 const Err404 = () => import(/* webpackChunkName: "404" */ '@/views/error/404')
 
@@ -74,12 +75,22 @@ export const asyncRoutes = [
     path: '/map',
     name: 'map',
     component: Layout,
+    meta: {
+      title: '地图',
+      icon: 'location-arrow'
+    },
     children: [
       {
-        path: 'index',
-        name: 'mapIndex',
-        component: Location,
-        meta: { title: '定位', icon: 'location-arrow' }
+        path: 'real-time-location',
+        name: 'RealTimeLocation',
+        component: RealTimeLocation,
+        meta: { title: '实时定位' }
+      },
+      {
+        path: 'multi-location',
+        name: 'MultiLocation',
+        component: MultiLocation,
+        meta: { title: '多点定位' }
       }
     ]
   },
