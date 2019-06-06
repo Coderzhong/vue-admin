@@ -90,6 +90,8 @@ export default {
   methods: {
     getList () {
       this.loading = true
+      this.total = 0
+      this.list = []
       getList(this.query).then(res => {
         this.loading = false
         const { code, data: { total, list } } = res
