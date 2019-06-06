@@ -1,0 +1,77 @@
+@import './color-variables.scss';
+@import './size-variables.scss';
+
+.el-menu {
+  border: 0 none;
+  background-color: $menu-bg;
+  .el-submenu.is-active {
+    .el-submenu__title {
+      color: #fff !important;
+      i {
+        color: #fff;
+      }
+    }
+  }
+  .el-submenu__title:hover, .el-menu-item:hover {
+    transition: color .3s;
+    color: #fff !important;
+    i {
+      transition: color .3s;
+      color: #fff !important;
+    }
+  }
+  .el-menu-item.is-active {
+    color: #fff;
+    background-color: $primary !important;
+  }
+}
+.el-menu--collapse {
+  .el-submenu__title {
+    span {
+      height: 0;
+      width: 0;
+      overflow: hidden;
+      visibility: hidden;
+      display: inline-block;
+    }
+  }
+  i.el-submenu__icon-arrow {
+    display: none;
+  }
+}
+
+.el-scrollbar {
+  .scrollbar-wrapper {
+    overflow-x: hidden;
+  }
+}
+
+.el-table {
+  .cell {
+    text-align: center;
+  }
+  th {
+    .cell {
+      color: #333;
+    }
+  }
+}
+
+
+// 页内覆盖默认样式
+.login-wrapper {
+  .el-form-item__error {
+    padding-top: 8px !important;
+  }
+}
+
+// 自定义样式
+.action-more {
+  color: $primary;
+}
+
+
+// 去掉百度地图的版权信息
+.anchorBL {
+  display: none !important;
+}

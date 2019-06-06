@@ -1,9 +1,9 @@
 <template>
   <div class="map-wrapper">
-    <div id="map" class="map" ></div>
     <div class="description">
-      <h4>当前坐标：({{x}}, {{y}})</h4>
+      <h4>当前实时坐标：({{x}}, {{y}})</h4>
     </div>
+    <div id="map" class="map" ></div>
   </div>
 </template>
 
@@ -19,7 +19,7 @@ export default {
       intervalTimer: null
     }
   },
-  mounted () {     
+  mounted () {
     this.initMap()
     this.intervalTimer = setInterval(() => {
       const xPrev = this.x.toString().split('.')[0]
@@ -37,28 +37,36 @@ export default {
     clearInterval(this.intervalTimer)
   },
   methods: {
+    // 初始化地图
+    initMap () {
+      this.bm = new window.BMap.Map('map')
+      this.point = new window.BMap.Point(this.x, this.y)
+      this.bm.enableScrollWheelZoom(true)
+      this.convertor = new window.BMap.Convertor()
+      this.convertor.translate([this.point], 1, 5, this.translateCallback)
+    },
     // 坐标转换完之后的回调函数
     translateCallback (data) {
       if (data.status === 0) {
-        const marker = new BMap.Marker(data.points[0])
+        const label = new window.BMap.Label('Foo', { offset: new window.BMap.Size(20, -10) })
+        label.setStyle({
+          border: '0 none',
+          borderRadius: '14px',
+          padding: '2px 6px',
+          fontSize: '14px',
+          fontWeight: 'bold',
+          color: 'red'
+        })
+        const marker = new window.BMap.Marker(data.points[0])
+        marker.setLabel(label)
         this.bm.addOverlay(marker)
-        this.bm.setCenter(data.points[0])
+        this.bm.centerAndZoom(data.points[0], 15)
       }
     },
-    // 初始化地图
-    initMap () {
-      this.point = new BMap.Point(this.x, this.y)
-      this.bm = new BMap.Map('map')
-      this.bm.centerAndZoom(this.point, 18)
-      this.bm.addControl(new BMap.NavigationControl())
-      this.bm.enableScrollWheelZoom(true)
-      this.convertor = new BMap.Convertor()
-      this.convertor.translate([this.point], 1, 5, this.translateCallback)
-    },
-    changePoint () {      
-      this.point = new BMap.Point(this.x, this.y)
+    changePoint () {
+      this.point = new window.BMap.Point(this.x, this.y)
       let point = this.point
-      this.bm.clearOverlays() 
+      this.bm.clearOverlays()
       this.convertor.translate([point], 1, 5, this.translateCallback)
     }
   }
@@ -66,11 +74,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#map {
-  width: 100%;
-  height: 500px;
+.map-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  .description {
+    margin-bottom: 30px;
+  }
+  .map {
+    flex: 1;
+  }
 }
-.description {
-  margin-top: 30px;
-}
+
 </style>

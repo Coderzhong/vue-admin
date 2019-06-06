@@ -5,10 +5,10 @@
       <side-menu />
     </aside>
     <div class="main-container">
+      <header>
+        <layout-header />
+      </header>
       <el-scrollbar wrap-class="scrollbar-wrapper">
-        <header>
-          <layout-header />
-        </header>
         <div class="app-main">
           <div class="app-container">
             <transition name="fade-transform" mode="out-in">
@@ -99,6 +99,8 @@ $transition-time: .28s;
       padding-bottom: 0;
       background: $app-bg;
       .app-container {
+      display: flex;
+    flex-direction: column;
         border-radius: 2px;
         min-height: calc(100vh - #{$header-height} - #{$footer-height} - #{$app-main-padding});
         padding: $app-container-padding;
