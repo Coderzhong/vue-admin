@@ -56,6 +56,32 @@ $green: #3cd2a7;
 $blue: #1790ff;
 $yellow: #f5c122;
 
+.el-card:hover {
+  .red {
+    .count-icon {
+      color: #fff;
+      background: $red;
+    }
+  }
+  .blue {
+    .count-icon {
+      color: #fff;
+      background: $blue;
+    }
+  }
+  .green {
+    .count-icon {
+      color: #fff;
+      background: $green;
+    }
+  }
+  .yellow {
+    .count-icon {
+      color: #fff;
+      background: $yellow;
+    }
+  }
+}
 .count-header {
   display: flex;
   margin-bottom: 4px;
@@ -82,40 +108,20 @@ $yellow: #f5c122;
       font-size: 60px;
       color: $red;
     }
-    &:hover {
-      .count-icon {
-        background: $red;
-      }
-    }
   }
   &.blue {
     .count-icon {
       color: $blue;
-    }
-    &:hover {
-      .count-icon {
-        background: $blue;
-      }
     }
   }
   &.green {
     .count-icon {
       color: $green;
     }
-    &:hover {
-      .count-icon {
-        background: $green;
-      }
-    }
   }
   &.yellow {
     .count-icon {
       color: $yellow;
-    }
-    &:hover {
-      .count-icon {
-        background: $yellow;
-      }
     }
   }
 }

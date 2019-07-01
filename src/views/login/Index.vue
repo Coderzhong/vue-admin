@@ -88,9 +88,9 @@ export default {
   height: 100%;
   .login-main {
     border-radius: 6px;
-    box-shadow: 0 0 5px #eee;
+    box-shadow: 0 0 20px rgba(143, 168, 191, .35);
     width: 480px;
-    padding: 40px 60px 80px 60px;
+    padding: 50px 60px 90px 60px;
     background-color: #fff;
     .title {
       margin-bottom: 46px;
