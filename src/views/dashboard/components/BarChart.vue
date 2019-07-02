@@ -43,7 +43,7 @@ export default {
     initChart () {
       this.options = {
         legend: {
-          data: ['女生', '男生']
+          data: ['A商品', 'B商品']
         },
         tooltip: {
           trigger: 'axis',
@@ -53,7 +53,7 @@ export default {
         },
         grid: {
           top: 10,
-          bottom: 10
+          bottom: 30
         },
         xAxis: [{
           type: 'category',
