@@ -43,7 +43,7 @@ export default {
         this.getInfos()
       }, 60 * 1000)
     },
-    getInfos () { 
+    getInfos () {
       axios.post('/api/v1/GpsInfoQuery', this.query).then(res => {
         this.loading = true
         const { code, infos, message } = res.data
