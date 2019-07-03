@@ -44,7 +44,9 @@ export default {
       }, 60 * 1000)
     },
     getInfos () {
-      axios.post('/api/v1/GpsInfoQuery', this.query).then(res => {
+      axios.post('/api/v1/GpsInfoQuery', this.query, {
+        baseURL: process.env.VUE_APP_BASE_URL
+      }).then(res => {
         this.loading = true
         const { code, infos, message } = res.data
         if (code === '0') {
