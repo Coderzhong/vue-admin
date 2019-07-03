@@ -31,7 +31,7 @@ export default {
     initMap () {
       this.bm = new window.BMap.Map('map')
       this.bm.enableScrollWheelZoom(true)
-      const center = new window.BMap.Point(116.404, 39.915)
+      const center = new window.BMap.Point(104.130972, 36.256429)
       this.bm.centerAndZoom(center, 5)
       for (let i = 0; i < this.gpsCoord.length; i++) {
         const point = new window.BMap.Point(this.gpsCoord[i][0], this.gpsCoord[i][1])
