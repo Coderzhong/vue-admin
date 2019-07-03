@@ -25,6 +25,7 @@ const List = () => import(/* webpackChunkName: "list" */ '@/views/list/List')
 
 const RealTimeLocation = () => import(/* webpackChunkName: "map" */ '@/views/map/RealTimeLocation')
 const MultiLocation = () => import(/* webpackChunkName: "map" */ '@/views/map/MultiLocation')
+const MapDemo = () => import(/* webpackChunkName: "map" */ '@/views/map/Demo')
 
 const Err404 = () => import(/* webpackChunkName: "404" */ '@/views/error/404')
 
@@ -91,6 +92,12 @@ export const asyncRoutes = [
         name: 'MultiLocation',
         component: MultiLocation,
         meta: { title: '多点定位' }
+      },
+      {
+        path: 'map-demo',
+        name: 'MapDemo',
+        component: MapDemo,
+        meta: { title: '演示' }
       }
     ]
   },
