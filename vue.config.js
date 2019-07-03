@@ -8,7 +8,7 @@ module.exports = {
   devServer: {
     proxy: {
       '/api': {
-        target: 'http://47.105.100.61'
+        target: 'https://jrtb.xyz/'
       }
     }
   },
