@@ -4,7 +4,7 @@ import { MessageBox } from 'element-ui'
 
 // 引入路由做跳转控制
 // import router from '@/router'
-
+console.log('baseURL:', process.env.VUE_APP_BASE_URL)
 const request = axios.create({
   // baseURL: process.env.BASE_API, // api 的 base_url
   baseURL: process.env.VUE_APP_BASE_URL, // url = base url + request url 根据自己的情况配置

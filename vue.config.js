@@ -3,7 +3,7 @@ const CompressionWebpackPlugin = require('compression-webpack-plugin')
 const productionGzipExtensions = ['js', 'css']
 
 module.exports = {
-  publicPath: isProduction ? './' : process.env.VUE_APP_BASE_URL, // 根据项目的实际情况配置 https://cli.vuejs.org/zh/config/#baseurl
+  publicPath: isProduction ? './' : '/', // 根据项目的实际情况配置 https://cli.vuejs.org/zh/config/#baseurl
   productionSourceMap: false,
   devServer: {
     proxy: {
