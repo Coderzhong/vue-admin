@@ -54,7 +54,7 @@
       :total="total"
       :page.sync="query.currentPage"
       :limit.sync="query.pageSize"
-      @pagination="getList" />
+      @pagination="handleGetList" />
   </div>
 </template>
 
@@ -85,25 +85,26 @@ export default {
     }
   },
   mounted () {
-    this.getList()
+    this.handleGetList()
   },
   methods: {
-    getList () {
+    handleGetList () {
       this.loading = true
       this.total = 0
       this.list = []
-      getList(this.query).then(res => {
+      getList({...this.query}).then(res => {
         this.loading = false
-        const { code, data: { total, list } } = res
+        const { code, data: { total, list, currentPage } } = res
         if (code === 0) {
           this.total = total
           this.list = list
+          this.query.currentPage = Number(currentPage)
         }
       })
     },
     handleQuery () {
       this.query.currentPage = 1
-      this.getList()
+      this.handleGetList()
     },
     handleAdd () {
     },

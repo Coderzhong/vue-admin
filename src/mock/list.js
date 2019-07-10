@@ -30,7 +30,7 @@ const list = Mock.mock(/api\/getList/, 'get', options => {
       code: 0,
       message: 'OK',
       data: {
-        currentPage: 1,
+        currentPage,
         total, // 总条数
         pageSize, // 一页显示的条数
         pages, // 总页数
