@@ -11,7 +11,7 @@ const request = axios.create({
   timeout: 5000 // request timeout
 })
 request.interceptors.request.use(config => {
-  console.log(config)
+  // console.log(config)
   const token = getToken()
   if (token) {
     config.headers['Authorization'] = token
