@@ -90,15 +90,15 @@ export default {
   methods: {
     handleGetList () {
       this.loading = true
-      this.total = 0
       this.list = []
-      getList({...this.query}).then(res => {
+      getList(this.query).then(res => {
         this.loading = false
-        const { code, data: { total, list, currentPage } } = res
+        const { code, data: { total, list } } = res
         if (code === 0) {
           this.total = total
           this.list = list
-          this.query.currentPage = Number(currentPage)
+        } else {
+          this.total = 0
         }
       })
     },
